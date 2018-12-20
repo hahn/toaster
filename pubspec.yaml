@@ -1,5 +1,5 @@
 name: toaster
-description: A new flutter plugin project.
+description: A simple toast plugin for Android and iOS.
 version: 0.0.1
 author: Hanhan Husna <matcherapy@gmail.com>
 homepage: https://ha.hn.web.id/
@@ -9,6 +9,11 @@ environment:
 
 dependencies:
   flutter:
+    sdk: flutter
+  meta: ^1.1.6
+
+dev_dependencies:
+  flutter_test:
     sdk: flutter
 
 # For information on the generic Dart part of this file, see the
