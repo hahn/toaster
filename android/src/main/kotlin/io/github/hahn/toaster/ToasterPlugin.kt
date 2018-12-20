@@ -19,22 +19,22 @@ class ToasterPlugin(private val registrar: Registrar): MethodCallHandler {
   }
 
   override fun onMethodCall(call: MethodCall, result: Result) {
-    if (call.method == "getPlatformVersion") {
-        result.success("Android ${android.os.Build.VERSION.RELEASE}")
-    } else if(call.method == "toast") {
+      when {
+          call.method == "getPlatformVersion" -> result.success("Android ${android.os.Build.VERSION.RELEASE}")
+          call.method == "toast" -> {
 
-        val msg: String? = call.argument("message")
-        val duration: Int? = call.argument("duration")
-        Log.d("TAG", "toast: $msg ")
-        val d = when(duration) {
-            0 -> Toast.LENGTH_SHORT
-            else -> Toast.LENGTH_LONG
-        }
+              val msg: String? = call.argument("message")
+              val duration: Int? = call.argument("duration")
+              Log.d("TAG", "toast: $msg ")
+              val d = when(duration) {
+                  0 -> Toast.LENGTH_SHORT
+                  else -> Toast.LENGTH_LONG
+              }
 
-        Toast.makeText(registrar.context(), msg, d).show()
+              Toast.makeText(registrar.context(), msg, d).show()
 
-    } else {
-      result.notImplemented()
-    }
+          }
+          else -> result.notImplemented()
+      }
   }
 }
