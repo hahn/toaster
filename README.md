@@ -1,14 +1,20 @@
 # toaster
 
-A new flutter plugin project.
+A simple toast plugin for Android and iOS.
 
-## Getting Started
+## Installation
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.io/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+Add `toaster: ^0.0.1` in your  `pubspec.yaml` dependencies
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## How To Use
+
+With this plugin, you can easily show toast on both Android (using Toast) and iOS (using actionSheet). Example:
+
+```Toaster.toast(message: "Message", duration: Duration.SHORT);```
+
+For a more detail example please take a look at the `example` folder.
+
+![screenshot](./example/screenshot1.png)
+
+![screenshot](./example/screenshot2.png)
+
