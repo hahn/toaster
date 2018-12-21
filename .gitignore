@@ -100,3 +100,12 @@ unlinked_spec.ds
 # example
 example/build/
 lib/*.jar
+
+# xcode
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
